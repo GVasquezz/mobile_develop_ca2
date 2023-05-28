@@ -84,10 +84,12 @@ export class PhotoService {
 }
 
 export interface UserPhoto {
+  Favourite: boolean;
   filepath: string;
   webviewPath?: string;
-  location?: string;
   description?: string;
-  Favourite: boolean;
+  location?: string;
+ 
+  
   
 }

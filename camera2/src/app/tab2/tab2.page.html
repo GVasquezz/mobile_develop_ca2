@@ -24,11 +24,20 @@
       <ion-row>
         <ion-col size="4" *ngFor="let photo of photoService.photos; index as position">
           <ion-img [src]="photo.webviewPath"></ion-img>
+            
+          <ion-item>
+            <ion-label position="stacked">Location</ion-label>
+            <ion-input [(ngModel)]="photo.location"></ion-input> 
+          </ion-item>
 
           <ion-item>
-            <ion-label position="stacked">Description</ion-label>
-            <ion-input [(ngModel)]="photo.description"></ion-input> <!-- Add an input field for description -->
+            <ion-label position="stacked">PICTURE DETAILS</ion-label>  
+            <ion-input [(ngModel)]="photo.description"></ion-input>
           </ion-item>
+
+          <ion-button (click)="markFavourite(photo)"> <!-- favorite button-->
+            <ion-icon name="{{ photo.Favourite ? 'square' : 'square-outline' }}"></ion-icon> 
+                    </ion-button>
           
         </ion-col>
       </ion-row>
