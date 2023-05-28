@@ -73,7 +73,8 @@ export class PhotoService {
     })
     this.photos.unshift({
       filepath: 'tbd',
-      webviewPath: photo.webPath
+      webviewPath: photo.webPath,
+      Favourite: false
     })
     console.log(this.photos.length);
     this.saveToDevice(photo);
@@ -85,4 +86,8 @@ export class PhotoService {
 export interface UserPhoto {
   filepath: string;
   webviewPath?: string;
+  location?: string;
+  description?: string;
+  Favourite: boolean;
+  
 }

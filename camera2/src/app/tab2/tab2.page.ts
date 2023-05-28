@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PhotoService } from '../services/photo.service';
+import { PhotoService, UserPhoto } from '../services/photo.service';
 
 @Component({
   selector: 'app-tab2',
@@ -11,5 +11,11 @@ export class Tab2Page {
   constructor(public photoService: PhotoService) { }
   takePhoto() {
     this.photoService.takePhoto();
+  
   }
+  markFavourite(photo: UserPhoto){
+    photo.Favourite = !photo.Favourite;
+}
+
+
 }
